@@ -1,14 +1,15 @@
-#ifndef DEIDARA_CTYPE
-#define DEIDARA_CTYPE
+#ifndef _DEIDARA_CTYPE
+#define _DEIDARA_CTYPE
 
-#define _U 0x01  // upper
-#define _L 0x02  // lower
-#define _D 0x04  //digit
-#define _C 0x08  // cntrl
-#define _P 0x10  // punct
-#define _S 0x20  // white space (space/lf/tab)
-#define _X 0x40  //hex digit
-#define _SP 0x80 // hard space (0x20)
+#define _U 0x01   // upper
+#define _L 0x02   // lower
+#define _D 0x04   // digit
+#define _C 0x08   // cntrl
+#define _P 0x10   // punct
+#define _S 0x20   // white space (space/lf/tab)
+#define _X 0x40   // hex digit
+#define _SP 0x80  // hard space (0x20)
+#define _HT 0x100 // horizontal tab (0x09)
 
 extern const unsigned char _ctype[];
 
@@ -16,6 +17,7 @@ extern const unsigned char _ctype[];
 
 #define isalnum(c) ((__ismask(c) & (_U | _L | _D)) != 0)
 #define isalpha(c) ((__ismask(c) & (_U | _L)) != 0)
+#define isblank(c) ((__ismask(c) & (_HT | _SP)) != 0)
 #define iscntrl(c) ((__ismask(c) & (_C)) != 0)
 #define isdigit(c) ((__ismask(c) & (_D)) != 0)
 #define isgraph(c) ((__ismask(c) & (_P | _U | _L | _D)) != 0)
