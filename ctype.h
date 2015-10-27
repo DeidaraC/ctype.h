@@ -12,8 +12,8 @@
 #define _HT 0x100 // horizontal tab (0x09)
 
 extern const unsigned short _ctype[];
-unsigned char toupper(unsigned char c);
-unsigned char tolower(unsigned char c);
+unsigned char __toupper(unsigned char c);
+unsigned char __tolower(unsigned char c);
 
 #define __ismask(x) (_ctype[(int)(unsigned char)(x)])
 
@@ -30,5 +30,7 @@ unsigned char tolower(unsigned char c);
 #define isupper(c) ((__ismask(c) & (_U)) != 0)
 #define isxdigit(c) ((__ismask(c) & (_D | _X)) != 0)
 #define isascii(c) (((unsigned char)(c)) <= 0x7f)
+#define tolower(c) __tolower(c)
+#define toupper(c) __toupper(c)
 
 #endif

@@ -31,7 +31,7 @@ const unsigned short _ctype[] = {
     _L,                                                              // 224-239
     _L, _L, _L, _L, _L, _L, _L, _P, _L, _L, _L, _L, _L, _L, _L, _L}; // 240-255
 
-unsigned char tolower(unsigned char c) {
+unsigned char __tolower(unsigned char c) {
   if (isupper(c)) {
     c -= 'A' - 'a';
   }
@@ -39,7 +39,7 @@ unsigned char tolower(unsigned char c) {
   return c;
 }
 
-unsigned char toupper(unsigned char c) {
+unsigned char __toupper(unsigned char c) {
   if (islower(c)) {
     c -= 'a' - 'A';
   }
