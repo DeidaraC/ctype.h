@@ -11,7 +11,7 @@
 #define _SP 0x80  // hard space (0x20)
 #define _HT 0x100 // horizontal tab (0x09)
 
-extern const unsigned char _ctype[];
+extern const unsigned short _ctype[];
 
 #define __ismask(x) (_ctype[(int)(unsigned char)(x)])
 
