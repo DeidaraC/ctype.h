@@ -35,8 +35,8 @@ int main(void) {
     assert(isspace(*s));
   }
 
-  for (s = "\f\n\r\t\v\a\b "; *s; s++) {
-    // assert(iscntrl(*s));
+  for (s = "\f\n\r\t\v\b\a"; *s; s++) {
+    assert(iscntrl(*s));
   }
 
   for (int c = EOF; c <= UCHAR_MAX; c++) {
@@ -66,10 +66,6 @@ int main(void) {
 
     if (isgraph(c)) {
       assert(isprint(c));
-    }
-
-    if (isspace(c)) {
-      // assert(c == ' ' || !isprint(c));
     }
 
     if (iscntrl(c)) {
