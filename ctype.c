@@ -30,3 +30,19 @@ const unsigned short _ctype[] = {
     _L, _L, _L, _L, _L, _L, _L, _L, _L, _L, _L, _L, _L, _L, _L,
     _L,                                                              // 224-239
     _L, _L, _L, _L, _L, _L, _L, _P, _L, _L, _L, _L, _L, _L, _L, _L}; // 240-255
+
+unsigned char tolower(unsigned char c) {
+  if (isupper(c)) {
+    c -= 'A' - 'a';
+  }
+
+  return c;
+}
+
+unsigned char toupper(unsigned char c) {
+  if (islower(c)) {
+    c -= 'a' - 'A';
+  }
+
+  return c;
+}

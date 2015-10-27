@@ -12,6 +12,8 @@
 #define _HT 0x100 // horizontal tab (0x09)
 
 extern const unsigned short _ctype[];
+unsigned char toupper(unsigned char c);
+unsigned char tolower(unsigned char c);
 
 #define __ismask(x) (_ctype[(int)(unsigned char)(x)])
 

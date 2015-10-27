@@ -7,5 +7,8 @@ int main(void) {
   printf("is lower? 'A': %d 'b':%d '3': %d\n", islower('A'), islower('b'),
          islower('3'));
 
+  printf("toupper('a'): %c\n", toupper('a'));
+  printf("tolower('B'): %c\n", tolower('B'));
+
   return 0;
 }
